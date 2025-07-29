@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>HTML-Manipulation mit JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .content {
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+    .content p {
+      margin: 0;
+    }
+    .content.highlight {
+      background-color: #ffe0b2; /* Hellorange für Hervorhebung */
+      border: 2px solid #ff9800; /* Orange Rand */
+      transform: scale(1.02);
+    }
+    button {
+      padding: 10px 15px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #message {
+        background-color: #e0f7fa;
+        padding: 10px;
+        border-left: 5px solid #00bcd4;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+    #taskList {
+      list-style: none;
+      padding: 0;
+    }
+    #taskList li {
+      background-color: #e3f2fd;
+      padding: 8px 12px;
+      margin-bottom: 5px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #taskList li button {
+      background-color: #f44336;
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+    #taskInput {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 250px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DOM-Beispiele und To-Do-Liste</h1>
+
+  <p>
+    <button id="btnFirst">Erster Bereich</button>
+    <button id="btnSecond">Zweiter Bereich</button>
+    <button id="btnThird">Dritter Bereich</button>
+    <button id="btnNewMessage">Zufällige Nachricht</button>
+  </p>
+
+  <div class="content" id="content_first">
+    <p>Dies ist der **erste** Inhaltsbereich. Sein Text wurde beim Laden dynamisch aktualisiert.</p>
+  </div>
+
+  <div class="content" id="content_second">
+    <p>Dies ist der **zweite** Inhaltsbereich. Sein Text wurde beim Laden dynamisch aktualisiert.</p>
+  </div>
+
+  <div class="content" id="content_third">
+    <p>Dies ist der **dritte** Inhaltsbereich.</p>
+  </div>
+
+  <div id="message">
+    <p>Hier erscheinen Nachrichten und dynamische Inhalte.</p>
+  </div>
+
+  <hr>
+  <h2>Meine To-Do-Liste</h2>
+  <input type="text" id="taskInput" placeholder="Neue Aufgabe hinzufügen...">
+  <button id="addTaskBtn">Aufgabe hinzufügen</button>
+  <ul id="taskList">
+    <!-- Aufgaben werden hier dynamisch hinzugefügt -->
+  </ul>
+
+  <!-- JavaScript am Ende des Body-Tags einbinden, um sicherzustellen, dass das DOM geladen ist -->
+  <script src="script.js"></script>
+
+</body>
+</html>
